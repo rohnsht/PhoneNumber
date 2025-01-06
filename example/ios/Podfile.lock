@@ -13,7 +13,6 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - phone_number (from `.symlinks/plugins/phone_number/ios`)
-  - PhoneNumberKit (~> 3.8)
 
 SPEC REPOS:
   trunk:
@@ -30,6 +29,6 @@ SPEC CHECKSUMS:
   phone_number: 9e988af6d4fe115f4e01ed3120c937d3639e58bc
   PhoneNumberKit: ec00ab8cef5342c1dc49fadb99d23fa7e66cf0ef
 
-PODFILE CHECKSUM: fea22fbbd74a66f59413ca1a89c6af6277105b56
+PODFILE CHECKSUM: 38ccce710e7a0c602fd1c647947235f93b3429e9
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

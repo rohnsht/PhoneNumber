@@ -1,4 +1,5 @@
 /// Type of the number based on the number itself
+library;
 // ignore_for_file: constant_identifier_names
 
 enum PhoneNumberType {

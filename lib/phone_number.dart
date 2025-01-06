@@ -1,4 +1,4 @@
-library phone_number;
+library;
 
 export 'src/controller.dart';
 export 'src/models/models.dart';
