@@ -21,7 +21,7 @@ public class SwiftPhoneNumberPlugin: NSObject, FlutterPlugin {
         }
     }
 
-    private let kit = PhoneNumberKit()
+    private let kit = PhoneNumberUtility()
     
     private func validate(_ call: FlutterMethodCall, result: FlutterResult){
         guard
@@ -68,7 +68,7 @@ public class SwiftPhoneNumberPlugin: NSObject, FlutterPlugin {
     }
 
     private func carrierRegionCode(result: FlutterResult) {
-        result(PhoneNumberKit.defaultRegionCode())
+        result(PhoneNumberUtility.defaultRegionCode())
     }
 
     private func format(_ call: FlutterMethodCall, result: FlutterResult) {
