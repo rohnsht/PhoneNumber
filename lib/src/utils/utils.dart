@@ -39,6 +39,13 @@ extension StringExt on String {
   /// 'abcdef'.findAdditionRange('adef') == TextRange(start: 1, end: 4);
   /// ```
   TextRange findAdditionRange(String base) {
+    if (isEmpty || base.isEmpty) {
+      if (isEmpty && base.isEmpty) {
+        return TextRange.empty;
+      }
+      return TextRange(start: 0, end: length);
+    }
+
     var from = 0;
     while (codeUnitAt(from) == base.codeUnitAt(from)) {
       from += 1;
