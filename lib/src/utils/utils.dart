@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:phone_number/src/utils/patterns.dart';
+
+import 'patterns.dart';
 
 export 'package:phone_number/src/utils/patterns.dart';
 

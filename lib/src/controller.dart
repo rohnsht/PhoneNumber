@@ -229,7 +229,7 @@ class PhoneNumberEditingController extends TextEditingController {
   ) {
     var newBaseOffset = 0;
     if (value.selection.baseOffset > 0) {
-      var index = value.text.lastIndexOf(
+      final index = value.text.lastIndexOf(
         const Dialable(),
         value.selection.baseOffset - 1,
       );

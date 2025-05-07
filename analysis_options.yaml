@@ -1,3 +1,22 @@
 include: package:flutter_lints/flutter.yaml
 linter:
   rules:
+    avoid_print: true  # Uncomment to disable the `avoid_print` rule
+    #prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    annotate_overrides: true  # Uncomment to enable the `annotate_overrides` rule
+    avoid_unnecessary_containers: true  # Uncomment to enable the `avoid_unnecessary_containers` rule
+    camel_case_extensions: true  # Uncomment to enable the `camel_case_extensions` rule
+    file_names: true  # Uncomment to enable the `file_names` rule
+    no_leading_underscores_for_local_identifiers: true  # Uncomment to enable the `no_leading_underscores_for_local_identifiers` rule
+    prefer_const_constructors_in_immutables: true  # Uncomment to enable the `prefer_const_constructors_in_immutables` rule
+    prefer_const_constructors: true  # Uncomment to enable the `prefer_const_constructors` rule
+    prefer_const_literals_to_create_immutables: true  # Uncomment to enable the `prefer_const_literals_to_create_immutables` rule
+    prefer_final_locals: true  # Uncomment to enable the `prefer_final_locals` rule
+    prefer_final_fields: true  # Uncomment to enable the `prefer_final_fields` rule
+    prefer_spread_collections: true  # Uncomment to enable the `prefer_spread_collections` rule
+    prefer_collection_literals: true  # Uncomment to enable the `prefer_collection_literals` rule
+    prefer_const_declarations: true  # Uncomment to enable the `prefer_const_declarations` rule
+    valid_regexps: true  # Uncomment to enable the `valid_regexps` rule
+    use_key_in_widget_constructors: true  # Uncomment to enable the `use_key_in_widget_constructors` rule
+    use_build_context_synchronously: true  # Uncomment to enable the `use_build_context_synchronously` rule
+   
