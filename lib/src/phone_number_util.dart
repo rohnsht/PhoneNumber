@@ -15,7 +15,8 @@ class PhoneNumberUtil {
   factory PhoneNumberUtil() => PhoneNumberUtil._(_phoneNumberChannel);
 
   @visibleForTesting
-  factory PhoneNumberUtil.withChannel(channel) => PhoneNumberUtil._(channel);
+  factory PhoneNumberUtil.withChannel(MethodChannel channel) =>
+      PhoneNumberUtil._(channel);
 
   /// Parse a [phoneNumberString] to [PhoneNumber] object
   ///

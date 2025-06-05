@@ -47,5 +47,5 @@ android {
 }
 
 dependencies {
-    implementation "com.googlecode.libphonenumber:libphonenumber:8.13.52"
+    implementation "com.googlecode.libphonenumber:libphonenumber:9.0.6"
 }

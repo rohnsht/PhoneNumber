@@ -8,11 +8,6 @@ import 'package:phone_number_example/region_picker.dart';
 import 'package:phone_number_example/store.dart';
 import 'package:phone_number_example/utils.dart';
 
-/// TODO: Add previous hardcoded examples
-// parse '17449106505' (MX)
-// parse list "+48606723456", "+48774843312"
-// format '+47234723432', 'BR'
-
 class FunctionsPage extends StatefulWidget {
   final Store store;
 

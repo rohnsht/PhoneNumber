@@ -15,7 +15,7 @@ class ParseResult {
         phoneNumber: phoneNumber,
       );
 
-  factory ParseResult.error(code) => ParseResult._(errorCode: code);
+  factory ParseResult.error(String? code) => ParseResult._(errorCode: code);
 
   @override
   String toString() {
