@@ -2,14 +2,14 @@ group 'np.com.rohanshrestha.phone_number'
 version '1.0.0'
 
 buildscript {
-    ext.kotlin_version = '1.9.22'
+    ext.kotlin_version = '2.2.21'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.11.0'
+        classpath 'com.android.tools.build:gradle:8.13.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -32,20 +32,16 @@ android {
         targetCompatibility JavaVersion.VERSION_21
     }
 
-    kotlinOptions {
-        jvmTarget = '21'
-    }
-
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    compileSdkVersion 36
     defaultConfig {
-        compileSdk 35
-        minSdk 21
+        minSdkVersion 21
     }
 }
 
 dependencies {
-    implementation "com.googlecode.libphonenumber:libphonenumber:9.0.9"
+    implementation "com.googlecode.libphonenumber:libphonenumber:9.0.22"
 }
