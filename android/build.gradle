@@ -2,7 +2,7 @@ group 'np.com.rohanshrestha.phone_number'
 version '1.0.0'
 
 buildscript {
-    ext.kotlin_version = '2.2.21'
+    ext.kotlin_version = '2.1.21'
     repositories {
         google()
         mavenCentral()
@@ -38,7 +38,7 @@ android {
 
     compileSdkVersion 36
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 24
     }
 }
 

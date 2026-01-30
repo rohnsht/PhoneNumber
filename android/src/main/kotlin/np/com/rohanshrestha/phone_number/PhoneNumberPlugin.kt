@@ -47,12 +47,12 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
         locale = if (identifier == null) {
             Locale.getDefault()
         } else {
-            Locale(identifier)
+            Locale.forLanguageTag(identifier.replace('_', '-'))
         }
 
         for (region in PhoneNumberUtil.getInstance().supportedRegions) {
             val res: MutableMap<String, Any> = HashMap()
-            res["name"] = Locale("", region).getDisplayCountry(locale)
+            res["name"] = Locale.Builder().setRegion(region).build().getDisplayCountry(locale)
             res["code"] = region
             res["prefix"] = PhoneNumberUtil.getInstance().getCountryCodeForRegion(region)
             map.add(res)
@@ -86,7 +86,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
             res["isValid"] = isValid
 
             result.success(res)
-        } catch (exception: Exception) {
+        } catch (_: Exception) {
             result.error("InvalidNumber", "Number $number is invalid", null)
         }
     }
@@ -114,7 +114,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
             res["formatted"] = formatted
 
             result.success(res)
-        } catch (exception: Exception) {
+        } catch (_: Exception) {
             result.error("InvalidNumber", "Number $number is invalid", null)
         }
     }
@@ -156,7 +156,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
                     put("national_number", phoneNumber.nationalNumber.toString())
                 }
             }
-        } catch (e: NumberParseException) {
+        } catch (_: NumberParseException) {
             return null
         }
     }
@@ -215,7 +215,6 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
             PhoneNumberType.UAN -> "uan"
             PhoneNumberType.VOICEMAIL -> "voicemail"
             PhoneNumberType.UNKNOWN -> "unknown"
-            else -> "notParsed"
         }
     }
 }
