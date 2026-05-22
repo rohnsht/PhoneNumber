@@ -1,10 +1,10 @@
 import Flutter
 import PhoneNumberKit
 
-public class SwiftPhoneNumberPlugin: NSObject, FlutterPlugin {
+public class PhoneNumberPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "np.com.rohanshrestha/phone_number", binaryMessenger: registrar.messenger())
-        let instance = SwiftPhoneNumberPlugin()
+        let instance = PhoneNumberPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
 

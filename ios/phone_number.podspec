@@ -13,9 +13,9 @@ Flutter plugin for phone number validation
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files     = 'phone_number/Sources/phone_number/**/*.swift'
   s.dependency 'Flutter'
-  s.platform = :ios, '9.0'
+  s.platform         = :ios, '13.0'
 
   s.dependency 'PhoneNumberKit', '~>4.2'
 
