@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "FlutterFramework", path: "../FlutterFramework"),
-        .package(url: "https://github.com/marmelroy/PhoneNumberKit.git", from: "4.2.0")
+        .package(url: "https://github.com/marmelroy/PhoneNumberKit.git", .upToNextMinor(from: "4.2.0"))
     ],
     targets: [
         .target(
@@ -22,5 +22,6 @@ let package = Package(
                 .product(name: "PhoneNumberKit", package: "PhoneNumberKit")
             ]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )

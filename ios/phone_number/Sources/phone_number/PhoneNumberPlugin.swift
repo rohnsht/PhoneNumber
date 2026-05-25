@@ -35,9 +35,9 @@ public class PhoneNumberPlugin: NSObject, FlutterPlugin {
                 return
         }
 
-        let region = arguments["region"] as? String?
+        let region = arguments["region"] as? String
 
-        let isValid = region != nil ? kit.isValidPhoneNumber(number, withRegion: region!!) : kit.isValidPhoneNumber(number);
+        let isValid = region != nil ? kit.isValidPhoneNumber(number, withRegion: region!) : kit.isValidPhoneNumber(number)
           let res:[String: Bool] = [
                     "isValid": isValid
                 ]
