@@ -10,4 +10,6 @@
 pubspec.lock
 
 build/
+.build/
+.swiftpm/
 *.iml
