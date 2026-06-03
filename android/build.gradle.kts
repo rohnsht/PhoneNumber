@@ -14,7 +14,7 @@ plugins {
 
 android {
     namespace = "np.com.rohanshrestha.phone_number"
-    compileSdk = 36
+    compileSdk = 37
     
     defaultConfig {
         minSdk = 24
