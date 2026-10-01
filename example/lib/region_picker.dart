@@ -30,7 +30,7 @@ class RegionPickerState extends State<RegionPicker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Available regions")),
+      appBar: AppBar(title: const Text('Available regions')),
       body: Scrollbar(
         child: Column(
           children: [

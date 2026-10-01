@@ -70,7 +70,7 @@ class AutoformatPageState extends State<AutoformatPage>
 
     if (selectedRegion != null) {
       log('Region selected: $selectedRegion');
-      regionCtrl.text = "${selectedRegion.name} (+${selectedRegion.prefix})";
+      regionCtrl.text = '${selectedRegion.name} (+${selectedRegion.prefix})';
       region = selectedRegion;
       update();
     }

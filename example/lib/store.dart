@@ -28,7 +28,7 @@ class Store {
   }
 
   Future<ParseResult> parse(String string, {Region? region}) async {
-    log("parse $string for region: ${region?.code}");
+    log('parse $string for region: ${region?.code}');
     try {
       final result = await plugin.parse(string, regionCode: region?.code);
       return ParseResult(result);
@@ -38,7 +38,7 @@ class Store {
   }
 
   Future<String?> format(String string, Region region) async {
-    log("format $string for region: ${region.code}");
+    log('format $string for region: ${region.code}');
     try {
       final result = await plugin.format(string, region.code);
       return result;
@@ -48,7 +48,7 @@ class Store {
   }
 
   Future<bool> validate(String string, {Region? region}) async {
-    log("validate $string for region: ${region?.code}");
+    log('validate $string for region: ${region?.code}');
     try {
       final result = await plugin.validate(string, regionCode: region?.code);
       return result;
@@ -59,7 +59,7 @@ class Store {
   }
 
   Future<String?> carrierRegionCode() async {
-    log("fetching carrierRegionCode");
+    log('fetching carrierRegionCode');
     try {
       final result = await plugin.carrierRegionCode();
       return result;

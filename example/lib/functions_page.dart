@@ -79,7 +79,7 @@ class FunctionsPageState extends State<FunctionsPage>
 
     if (selectedRegion != null) {
       log('Region selected: $selectedRegion');
-      regionCtrl.text = "${selectedRegion.name} (+${selectedRegion.prefix})";
+      regionCtrl.text = '${selectedRegion.name} (+${selectedRegion.prefix})';
       setState(() => region = selectedRegion);
     }
   }
@@ -226,7 +226,7 @@ class Result extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Result:", style: theme.textTheme.titleLarge),
+        Text('Result:', style: theme.textTheme.titleLarge),
         const SizedBox(height: 10),
         ...(result.hasError)
             ? [
