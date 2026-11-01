@@ -78,7 +78,7 @@ extension type _DisplayNamesOptions._(JSObject _) implements JSObject {
 ///
 /// ```html
 /// <!-- web/index.html -->
-/// <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1/bundle/libphonenumber-min.js"></script>
+/// <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.13/bundle/libphonenumber-mobile.js"></script>
 /// ```
 class PhoneNumberPlugin {
   static void registerWith(Registrar registrar) {
@@ -105,7 +105,7 @@ class PhoneNumberPlugin {
     final script =
         web.document.createElement('script') as web.HTMLScriptElement;
     script.src =
-        'https://cdn.jsdelivr.net/npm/libphonenumber-js@1/bundle/libphonenumber-min.js';
+        'https://cdn.jsdelivr.net/npm/libphonenumber-js@1.13/bundle/libphonenumber-mobile.js';
     script.onload = (web.Event _) {
       completer.complete();
     }.toJS;

@@ -2,22 +2,24 @@ package np.com.rohanshrestha.phone_number
 
 import android.content.Context
 import android.telephony.TelephonyManager
-import com.google.i18n.phonenumbers.NumberParseException
-import com.google.i18n.phonenumbers.PhoneNumberUtil
-import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberType
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
+import io.michaelrocks.libphonenumber.android.NumberParseException
+import io.michaelrocks.libphonenumber.android.PhoneNumberUtil
+import io.michaelrocks.libphonenumber.android.PhoneNumberUtil.PhoneNumberType
 import java.util.Locale
 
 class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
     private var channel: MethodChannel? = null
     private var context: Context? = null
+    private lateinit var phoneUtil: PhoneNumberUtil
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPluginBinding) {
         context = flutterPluginBinding.applicationContext
+        phoneUtil = PhoneNumberUtil.createInstance(context)
         channel =
             MethodChannel(flutterPluginBinding.binaryMessenger, "np.com.rohanshrestha/phone_number")
         channel!!.setMethodCallHandler(this)
@@ -50,11 +52,11 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
             Locale.forLanguageTag(identifier.replace('_', '-'))
         }
 
-        for (region in PhoneNumberUtil.getInstance().supportedRegions) {
+        for (region in phoneUtil.supportedRegions) {
             val res: MutableMap<String, Any> = HashMap()
             res["name"] = Locale.Builder().setRegion(region).build().getDisplayCountry(locale)
             res["code"] = region
-            res["prefix"] = PhoneNumberUtil.getInstance().getCountryCodeForRegion(region)
+            res["prefix"] = phoneUtil.getCountryCodeForRegion(region)
             map.add(res)
         }
 
@@ -76,7 +78,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
         }
 
         try {
-            val util = PhoneNumberUtil.getInstance()
+            val util = phoneUtil
             val phoneNumber = util.parse(number, region)
             val isValid = if (region == null
             ) util.isValidNumber(phoneNumber)
@@ -101,7 +103,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
         }
 
         try {
-            val util = PhoneNumberUtil.getInstance()
+            val util = phoneUtil
             val formatter = util.getAsYouTypeFormatter(region)
 
             var formatted = ""
@@ -168,7 +170,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
         if (string.isNullOrEmpty()) {
             result.error("InvalidParameters", "Invalid 'string' parameter.", null)
         } else {
-            val util = PhoneNumberUtil.getInstance()
+            val util = phoneUtil
 
             val res = parseStringAndRegion(string, region, util)
 
@@ -187,7 +189,7 @@ class PhoneNumberPlugin : FlutterPlugin, MethodCallHandler {
         if (strings.isNullOrEmpty()) {
             result.error("InvalidParameters", "Invalid 'strings' parameter.", null)
         } else {
-            val util = PhoneNumberUtil.getInstance()
+            val util = phoneUtil
 
             val res = HashMap<String, HashMap<String, String>?>(strings.size)
 

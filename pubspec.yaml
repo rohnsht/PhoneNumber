@@ -1,7 +1,7 @@
 name: phone_number
 description: Flutter plugin for parsing, formatting and validating international
   phone numbers.
-version: 1.0.6
+version: 1.0.7
 homepage:
 
 environment:
@@ -14,7 +14,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   meta: ^1.18.0
-  web: ^1.1.0
+  web: ^1.1.2
 
 dev_dependencies:
   flutter_lints: ^6.0.0

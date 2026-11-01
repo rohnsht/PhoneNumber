@@ -39,5 +39,5 @@ kotlin {
 }
 
 dependencies {
-    implementation("com.googlecode.libphonenumber:libphonenumber:9.0.40")
+    implementation("io.michaelrocks:libphonenumber-android:9.0.+")
 }
